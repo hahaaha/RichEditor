@@ -4,7 +4,7 @@ function createTopTool(root: Element) {
     let topTool = createElement(root, "div", "topTool")
     createBtn(topTool,"B",bold)
     createBtn(topTool,"H",head)
-    createBtn(topTool,"A",color)
+    createColor(topTool,color)
 }
 
 let createBtn = function (root: Element,icon:string,func:any) {
@@ -13,6 +13,16 @@ let createBtn = function (root: Element,icon:string,func:any) {
     btn.className = "icon"
     btn.onmousedown = func
     root.appendChild(btn)
+}
+
+let createColor = function (root:Element,color:Function) {
+    let input = document.createElement('input')
+    input.type = "color"
+    input.value = ""
+    input.onchange = function(e) {
+        color(e)
+    }
+    root.append(input)
 }
 
 function bold(e) {
@@ -27,7 +37,8 @@ function head(e) {
 
 function color(e) {
     e.preventDefault()
-    document.execCommand("foreColor", false, "#ccc")
+    console.log(e)
+    document.execCommand("foreColor", false, e.target.value)
 }
 
 
