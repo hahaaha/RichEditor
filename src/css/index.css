@@ -1,0 +1,7 @@
+.editor_content {
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    border: 1px red solid;
+    padding: 0 3px;
+}
