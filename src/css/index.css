@@ -2,6 +2,34 @@
     width: 90%;
     height: 200px;
     margin: 0 auto;
-    border: 1px red solid;
+    border: 1px #ccc solid;
     padding: 0 3px;
+}
+.editor_content:focus {
+    outline: none;
+}
+
+.topTool {
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0 3px;
+    border: 1px #ccc solid;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.icon {
+    padding: 2px 5px;
+    cursor: pointer;
+    margin: 5px 0 0 0;
+    color: #999;
+    display: inline-block;
+    font-size: 20px;
+}
+.icon:hover {
+    color: #000;
+}
+.bold {
+    color: rgb(17, 150, 191);
 }

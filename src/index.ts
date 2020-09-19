@@ -1,13 +1,9 @@
 import './css/index.css'
+import { createTopTool } from './topTool'
+import { createInput } from './input'
 
 window.onload = function () {
     let editor = document.getElementById("editor")
-    create(editor)
-}
-
-let create = (root:Element) => {
-    let content = document.createElement("div")
-    content.className = "editor_content"
-    content.contentEditable = "true"
-    root.appendChild(content)
+    createTopTool(editor)
+    createInput(editor)
 }
