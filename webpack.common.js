@@ -1,6 +1,3 @@
-const path = require('path')
-const HmtlWebpackPlugin = require('html-webpack-plugin')
-
 module.exports = {
     devtool: 'inline-source-map',
     resolve: {

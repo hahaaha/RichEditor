@@ -5,7 +5,8 @@
   "author": "haha",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
