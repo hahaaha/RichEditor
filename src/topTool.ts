@@ -40,7 +40,7 @@ function bold(e) {
 
 function head(e) {
     e.preventDefault()
-    if (document.queryCommandValue('formatBlock')) {
+    if (document.queryCommandValue('formatBlock')!=="div"&&document.queryCommandValue('formatBlock')!=="") {
         document.execCommand("formatBlock", false, "div")
         Global.head = false
     } else {
@@ -57,35 +57,10 @@ function color(e) {
 }
 
 function chageIconStatus() {
-    console.log("ccc")
     let b: Element = tool.b
     let h: Element = tool.h
     IconStatus(b,Global.bold)
     IconStatus(h,Global.head)
-    // let hClassName: string[] = h.className.split(" ")
-    // if (Global.bold && bClassName[bClassName.length - 1] !== "bold") {
-    //     console.log("aa")
-    //     console.log(Global.bold)
-    //     bClassName.push("bold")
-    //     b.className = bClassName.join(" ")
-    // }
-
-    // if (!Global.bold && bClassName[bClassName.length - 1] === "bold") {
-    //     console.log("dd")
-    //     bClassName.pop()
-    //     b.className = bClassName.join(" ")
-    // }
-
-    // if (Global.head && hClassName[length - 1] !== "bold") {
-    //     console.log(Global.bold)
-    //     hClassName.push("bold")
-    //     h.className = hClassName.join(" ")
-    // }
-
-    // if (!Global.head && hClassName[length - 1] === "bold") {
-    //     hClassName.pop()
-    //     h.className = hClassName.join(" ")
-    // }
 }
 
 function IconStatus(icon:Element,status:boolean) {
