@@ -1,5 +1,6 @@
 import { createElement } from './util'
 import Global from './global'
+import selection from './selection'
 
 let tool: any = {}
 
@@ -33,6 +34,7 @@ let createColor = function (root: Element, color: Function) {
 
 function bold(e) {
     e.preventDefault()
+    selection.recoverSelection()
     document.execCommand("bold", false, null)
     Global.bold = !Global.bold
     chageIconStatus()
@@ -64,11 +66,9 @@ function chageIconStatus() {
 }
 
 function IconStatus(icon:Element,status:boolean) {
-    console.log(status)
     let className: string[] = icon.className.split(" ")
     let length = className.length
     if (status && className[length - 1] !== "bold") {
-        console.log(Global.bold)
         className.push("bold")
         icon.className = className.join(" ")
     }
